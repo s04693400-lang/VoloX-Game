@@ -36,7 +36,9 @@ func _process(delta):
         p.set_move(joy)
         $hp.text="♥  HP  %d / 100"%int(p.hp)
         $armor.text="◆  ARMOR  %d"%int(p.armor)
-        $ammo.text="▣  %02d / %03d"%(p.ammo,p.reserve)
+        
+    $ammo.text = "AMMO %02d / %03d" % [p.ammo, p.reserve]
+
         $zone.text="◉  SAFE ZONE  %dm"%int(get_parent().zone_radius)
     msg_time=max(0.,msg_time-delta)
     queue_redraw()
