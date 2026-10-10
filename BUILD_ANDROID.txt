@@ -1,0 +1,17 @@
+ANDROID APK BUILD
+
+This project includes export_presets.cfg configured for:
+Package: com.volox.battle
+Architecture: ARM64
+Output: build/VoloX_Battle.apk
+
+Godot 4:
+1. Install Godot 4.x and Android export templates.
+2. Open this project.
+3. Project > Export > Android.
+4. Install/configure the Android SDK/JDK when Godot asks.
+5. Export Project and choose build/VoloX_Battle.apk.
+
+For a release APK/AAB, create your own signing keystore and use it in the Android export settings.
+
+The current ChatGPT build environment does not contain Godot or the Android SDK, so this package is export-ready but the APK itself cannot be compiled inside this session.

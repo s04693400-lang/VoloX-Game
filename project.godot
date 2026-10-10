@@ -1,0 +1,27 @@
+[application]
+config/name="VoloX Battle"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.3")
+boot_splash/bg_color=Color(0.025,0.035,0.055,1)
+boot_splash/show_image=false
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+
+[input]
+jump={"deadzone":0.5,"events":[Object(InputEventKey,"physical_keycode":32)]}
+reload={"deadzone":0.5,"events":[Object(InputEventKey,"physical_keycode":82)]}
+sprint={"deadzone":0.5,"events":[Object(InputEventKey,"physical_keycode":4194325)]}
+shoot={"deadzone":0.5,"events":[Object(InputEventMouseButton,"button_index":1)]}
+
+[gui]
+theme/default_font_multichannel_signed_distance_field=true

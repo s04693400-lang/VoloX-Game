@@ -1,0 +1,45 @@
+[gd_scene load_steps=11 format=3]
+[ext_resource path="res://game.gd" type="Script" id="1"]
+[ext_resource path="res://player.gd" type="Script" id="2"]
+[ext_resource path="res://camera.gd" type="Script" id="3"]
+[ext_resource path="res://hud.gd" type="Script" id="4"]
+
+[sub_resource type="BoxMesh" id="gm"]
+size=Vector3(150,0.4,150)
+[sub_resource type="BoxShape3D" id="gs"]
+size=Vector3(150,0.4,150)
+[sub_resource type="StandardMaterial3D" id="gmat"]
+albedo_color=Color(0.075,0.22,0.10,1)
+roughness=1.0
+[sub_resource type="CapsuleShape3D" id="ps"]
+radius=0.42
+height=1.8
+
+[node name="VoloXBattle" type="Node3D"]
+script=ExtResource("1")
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees=Vector3(-58,-35,0)
+light_energy=1.35
+shadow_enabled=true
+directional_shadow_max_distance=90.0
+[node name="Fill" type="WorldEnvironment" parent="."]
+[node name="Ground" type="StaticBody3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+mesh=SubResource("gm")
+material_override=SubResource("gmat")
+[node name="Collision" type="CollisionShape3D" parent="Ground"]
+shape=SubResource("gs")
+[node name="Player" type="CharacterBody3D" parent="."]
+position=Vector3(0,1.1,0)
+script=ExtResource("2")
+[node name="Collision" type="CollisionShape3D" parent="Player"]
+shape=SubResource("ps")
+[node name="CameraRig" type="Node3D" parent="Player"]
+position=Vector3(0,1.35,0)
+script=ExtResource("3")
+[node name="Camera" type="Camera3D" parent="Player/CameraRig"]
+position=Vector3(0,1.15,6.4)
+current=true
+fov=72.0
+[node name="HUD" type="CanvasLayer" parent="."]
+script=ExtResource("4")
